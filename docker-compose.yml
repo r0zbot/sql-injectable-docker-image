@@ -1,8 +1,10 @@
 # docker-compose.yml
-version: "3"
+version: "3.5"
 services:
   app:
     build: .
+    networks:
+      - vumos
     depends_on:
       - postgres
     ports:
@@ -10,6 +12,12 @@ services:
       - "9229:9229"
 
   postgres:
+    networks:
+      - vumos
     build: db
     environment:
       POSTGRES_PASSWORD: postgres
+
+networks:
+  vumos:
+    name: vumos

@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.get('/', (req, res) => {
+app.get('/form', (req, res) => {
   res.send(`
         <form action="/login" method="post">
             <div>
@@ -30,6 +30,12 @@ app.get('/', (req, res) => {
             </div>
             <input type="submit" value="Sign in">
         </form>
+    `)
+});
+
+app.get('/', (req, res) => {
+  res.send(`
+        <a href='/form'> see the login form here</a>
     `)
 });
 

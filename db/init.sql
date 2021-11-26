@@ -1,4 +1,4 @@
-create table users
+create table if not exists users
 (
   username varchar not null
     constraint id
@@ -17,10 +17,10 @@ INSERT INTO "public"."users" ("username", "password", "name")
 INSERT INTO "public"."users" ("username", "password", "name")
   VALUES ('bob12', '7412369', 'Bob');
 
-create table secret_notes
+create table if not exists secret_notes
 (
    note varchar not null
-    constraint id
+    constraint id2
       primary key
 );
 
