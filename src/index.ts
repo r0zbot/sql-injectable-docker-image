@@ -8,7 +8,7 @@ const PG_HOST = process.env.PG_HOST || 'postgres';
 const client = new Client({
   password: "postgres",
   user: "postgres",
-  host: "postgres",
+  host: PG_HOST,
 });
 
 const app = express();
