@@ -3,6 +3,7 @@ import { Client } from "pg";
 import bodyParser from 'body-parser';
 
 const PORT = process.env.PORT || 3000;
+const PG_HOST = process.env.PG_HOST || 'postgres';
 
 const client = new Client({
   password: "postgres",
